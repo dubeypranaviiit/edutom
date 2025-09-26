@@ -1,12 +1,12 @@
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import "react-toastify/dist/ReactToastify.css"
+// import "react-toastify/dist/ReactToastify.css"
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import Banner from "@/components/home/Banner";
 import UserSync from "@/components/profile/UserSync";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import ClerkSync from "@/components/ClerkSync";
 const inter = Inter({subsets:['latin']})
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <Header />
         <main className="flex-grow mt-20  bg-white text-black">
           <UserSync />
-          <Toaster />
+          {/* <Toaster /> */}
           {children}
         </main>
        <Banner />
