@@ -5,8 +5,9 @@ import shelf from "./shelf.jpeg"
 import book1 from "./book_1.jpg"
 import book2 from "./book_2.jpg"
 import book3 from "./book_4.jpeg"
+import logo1 from "./logo2.jpg"
 export const assets = {
- auth,logo,about,shelf
+ auth,logo,about,shelf,logo1
     }
     import {
   FiUser,

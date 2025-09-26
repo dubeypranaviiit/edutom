@@ -1,9 +1,12 @@
-import React from 'react'
+"use client";
 
-const page = () => {
+import { Suspense } from "react";
+import AlleBooks from "./AlleBooks";
+
+export default function AllBooksPage() {
   return (
-    <div>page</div>
-  )
+    <Suspense fallback={<div>Loading filters...</div>}>
+      <AlleBooks />
+    </Suspense>
+  );
 }
-
-export default page

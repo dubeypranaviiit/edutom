@@ -5,6 +5,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import Banner from "@/components/home/Banner";
+import UserSync from "@/components/profile/UserSync";
+import { Toaster } from "react-hot-toast";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import ClerkSync from "@/components/ClerkSync";
 const inter = Inter({subsets:['latin']})
 export const metadata = {
   title: "EduTom",
@@ -16,34 +20,20 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
         <html lang="en">
       <body className="flex flex-col min-h-screen w-screen">
-      {/* put header */}
+   
+        <ReactQueryProvider>
+          <ClerkSync />
       <Header />
-        <main className="flex-grow mt-20">
+        <main className="flex-grow mt-20  bg-white text-black">
+          <UserSync />
+          <Toaster />
           {children}
         </main>
-       {/* put footer */}
        <Banner />
        <Footer />
+       </ReactQueryProvider>
       </body>
     </html>
      </ClerkProvider>
   );
 }
-// export default function RootLayout({ children }) {
-//   return (
-//     <ClerkProvider>
-//       <html lang="en">
-//         <body className="flex flex-col min-h-screen w-full">
-//           <Header /> {/* stays on top across all routes */}
-          
-//           <main className="flex-grow">
-//             {children} {/* profile layout will come here */}
-//           </main>
-
-//           <Banner />
-//           <Footer />
-//         </body>
-//       </html>
-//     </ClerkProvider>
-//   );
-// }

@@ -28,7 +28,7 @@ const { signOut } = useClerk();
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold">Account</h2>
+      <h2 className="text-xl font-bold bg-white text-black">Account</h2>
 
       {/* Profile */}
       <Link
