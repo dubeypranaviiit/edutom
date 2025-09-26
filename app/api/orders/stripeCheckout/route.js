@@ -4,8 +4,12 @@ import BookOrder from '@/modals/BookOrder.modal';
 import Book from '@/modals/Book.modal';
 import User from '@/modals/User.modal';
 import { NextResponse } from 'next/server';
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2022-11-15",
+});
 export async function POST(req) {
   await dbConnect();
 
